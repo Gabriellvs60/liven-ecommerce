@@ -3,9 +3,10 @@ import { styledTheme } from "../design/styledTheme";
 import { messagesInEnglish } from "../languages/en";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { useRoutes } from 'react-router-dom';
-import ProductsPage from '../components/pages/products/productsPage';
-import ProductsCartPage from '../components/pages/products/productsCardPage';
-import ProductsOverviewPage from '../components/pages/products/productOverview';
+import ProductsPage from '../pages/products/productsPage';
+import ProductsCartPage from '../pages/products/productsCardPage';
+import ProductsOverviewPage from '../pages/products/productOverview';
+import { GlobalStyles } from '../design/GlobalStyles';
 
 function App() {
   const element = useRoutes([
@@ -20,6 +21,7 @@ function App() {
   return (
     <IntlProvider messages={messagesInEnglish} defaultLocale="en" locale="en">
       <EmotionThemeProvider theme={styledTheme}>
+      <GlobalStyles />
        {element}
       </EmotionThemeProvider>
     </IntlProvider>
