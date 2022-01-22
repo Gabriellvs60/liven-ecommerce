@@ -1,4 +1,4 @@
 export const messagesInEnglish = {
-    welcome: 'welcome!',
-  }
-  
+  welcome: 'welcome!',
+  shop: 'Shop',
+}
