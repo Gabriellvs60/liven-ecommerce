@@ -12,5 +12,5 @@ export const styledTheme = {
 export type StyledThemeType = typeof styledTheme;
 
 declare module '@emotion/react' {
-  export interface Theme extends StyledThemeType {} // eslint-disable-line
+  export interface Theme extends StyledThemeType { } // eslint-disable-line
 }

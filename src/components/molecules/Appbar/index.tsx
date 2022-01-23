@@ -2,8 +2,9 @@ import { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import { StyledAppBar, StyledToolbar } from "./styles";
-import { BsBasket } from "react-icons/bs";
 import IconButton from "../IconButton";
+import { HiOutlineShoppingBag } from "react-icons/hi";
+
 import logo from "../../../assets/logo.jpg";
 type CustomProps = {};
 
@@ -24,7 +25,7 @@ const AppBar: React.FC<AppBarProps> = () => {
           </Box>
           <Box id="appbar-actions">
             <IconButton color="primary" badgeCount={2}>
-              <BsBasket fontSize="18px" />
+              <HiOutlineShoppingBag fontSize="20px" />
             </IconButton>
           </Box>
         </StyledToolbar>
