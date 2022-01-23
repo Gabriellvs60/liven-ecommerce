@@ -4,6 +4,7 @@ import ProductGridCard from "../../components/molecules/ProductGridCard";
 import ListTool from "../../components/molecules/ListTool";
 import MainTemplate from "../../components/templates/mainTemplate";
 import { productsData } from "./products.mock";
+import ProductDrawer from "../../components/organisms/ProductDrawer";
 
 type ProductProps = {
   id: string;
@@ -53,6 +54,7 @@ const ProductsPage: React.FC = () => {
           ))}
         </Grid>
       </Box>
+      <ProductDrawer open={true} onClose={() => {}} />
     </MainTemplate>
   );
 };

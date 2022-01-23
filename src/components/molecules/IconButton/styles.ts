@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { css, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 
 export const StyledIconButton = styled(IconButton, {
   shouldForwardProp: (prop) => !["$withBackground"].includes(prop as string),

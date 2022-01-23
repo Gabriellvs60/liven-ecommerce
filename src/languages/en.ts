@@ -5,5 +5,9 @@ export const messagesInEnglish = {
   page3: 'Page 3',
   searchAProduct: 'Search a Product',
   currency: '$',
-  inStock: 'In Stock'
+  inStock: 'In Stock',
+  shoppingCart: 'Shopping Cart',
+  subtotal: 'Subtotal',
+  viewChart: 'viewChart',
+  checkout: 'checkout',
 }
