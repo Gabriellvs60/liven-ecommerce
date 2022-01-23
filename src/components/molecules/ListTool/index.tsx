@@ -1,4 +1,4 @@
-import { Box, Divider, InputBase } from "@mui/material";
+import { Box, InputBase } from "@mui/material";
 import { useIntl } from "react-intl";
 import IconButton from "../IconButton";
 import { StyledContainer } from "./styles";
@@ -21,10 +21,8 @@ const ListTool: React.FC<ListToolProps> = () => {
           <FaList />
         </IconButton>
       </Box>
-      <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-      <Box>
+      <Box display="flex" flexDirection="row">
         <InputBase
-          sx={{ ml: 1, flex: 1 }}
           placeholder={formatMessage({ id: "searchAProduct" })}
           inputProps={{ "aria-label": "search a product" }}
         />
