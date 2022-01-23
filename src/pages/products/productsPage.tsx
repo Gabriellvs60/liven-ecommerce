@@ -6,12 +6,7 @@ import MainTemplate from "../../components/templates/mainTemplate";
 const ProductsPage: React.FC = () => {
   return (
     <MainTemplate>
-      <Box
-        display="flex"
-        alignItems="center"
-        flexDirection="column"
-        width="50%"
-      >
+      <Box display="flex" alignItems="center" flexDirection="column">
         <Box mt={3} width="100%">
           <ListTool />
         </Box>
