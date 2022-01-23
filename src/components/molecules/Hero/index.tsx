@@ -1,8 +1,24 @@
 import { Typography } from "@mui/material";
 import { useIntl } from "react-intl";
+import Breadcrumbs from "../Breadcrumbs";
 import { StyledHero } from "./styles";
 
 type HeroProps = {};
+
+const links = [
+  {
+    href: "/",
+    labelId: "home",
+  },
+  {
+    href: "/",
+    labelId: "shop",
+  },
+  {
+    href: "/",
+    labelId: "page3",
+  },
+];
 
 const Hero: React.FC<HeroProps> = () => {
   const { formatMessage } = useIntl();
@@ -16,6 +32,7 @@ const Hero: React.FC<HeroProps> = () => {
       >
         {formatMessage({ id: "Shop" })}
       </Typography>
+      <Breadcrumbs links={links} />
     </StyledHero>
   );
 };
