@@ -24,7 +24,7 @@ const AppBar: React.FC<AppBarProps> = () => {
             </Box>
           </Box>
           <Box id="appbar-actions">
-            <IconButton color="primary" badgeCount={2}>
+            <IconButton badgeCount={2}>
               <HiOutlineShoppingBag fontSize="20px" />
             </IconButton>
           </Box>
