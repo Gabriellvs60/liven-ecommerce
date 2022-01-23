@@ -22,7 +22,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
 }) => {
   const { formatMessage } = useIntl();
   return (
-    <Card width="269px" height="343px" p={0.5}>
+    <Card height="343px" p={0.5}>
       <TitleContainer>
         <Typography
           fontWeight={500}

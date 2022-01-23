@@ -26,21 +26,23 @@ const ProductsPage: React.FC = () => {
           mt={3}
           width="100%"
           display="flex"
-          justifyContent="flex-start"
+          justifyContent="flex-end"
           flexDirection="row"
         >
           <ListTool />
         </Box>
         <Grid
-          width="100%"
+          width="70%"
           container
           rowSpacing={2}
-          flex-direction="row"
+          gap={0}
           mt={3}
           display="flex"
+          justifyContent="center"
+          columnSpacing={{ xs: 10, sm: 2, md: 2, lg: 10, xl: 10 }}
         >
           {productsData.map((product: ProductProps) => (
-            <Grid item zeroMinWidth md={3}>
+            <Grid item zeroMinWidth xl={3} lg={4} md={4} sm={6}>
               <ProductGridCard
                 name={product.name}
                 price={product.price}

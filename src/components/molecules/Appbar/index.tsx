@@ -1,7 +1,7 @@
 import { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import { StyledAppBar, StyledToolbar } from "./styles";
+import { AppBarContainer, StyledAppBar, StyledToolbar } from "./styles";
 import IconButton from "../IconButton";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 
@@ -13,7 +13,7 @@ type AppBarProps = CustomProps & MuiAppBarProps;
 const AppBar: React.FC<AppBarProps> = () => {
   return (
     <StyledAppBar position="static">
-      <Box width="100%">
+      <AppBarContainer>
         <StyledToolbar>
           <Box id="appbar-logo">
             <Box display="flex" flexDirection="row" alignItems="center">
@@ -29,7 +29,7 @@ const AppBar: React.FC<AppBarProps> = () => {
             </IconButton>
           </Box>
         </StyledToolbar>
-      </Box>
+      </AppBarContainer>
     </StyledAppBar>
   );
 };
