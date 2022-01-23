@@ -12,6 +12,7 @@ type CustomProps = {
 type IconButtonProps = CustomProps & MuiIconButtonProps;
 
 const IconButton: React.FC<IconButtonProps> = ({
+  color = "secondary",
   badgeCount = null,
   children,
   withBackground,
@@ -19,7 +20,7 @@ const IconButton: React.FC<IconButtonProps> = ({
   return (
     <Badge badgeContent={badgeCount} color="primary">
       <StyledIconButton
-        color="secondary"
+        color={color}
         aria-label="icon-button"
         $withBackground={withBackground}
       >
