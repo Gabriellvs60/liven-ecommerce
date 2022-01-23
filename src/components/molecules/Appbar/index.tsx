@@ -1,5 +1,5 @@
 import { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
-import { AppBar as MuiAppBar, Box, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import { StyledAppBar, StyledToolbar } from "./styles";
 import { BsBasket } from "react-icons/bs";
