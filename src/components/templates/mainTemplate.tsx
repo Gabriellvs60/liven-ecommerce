@@ -10,7 +10,15 @@ const MainTemplate: React.FC<MainTemplateProps> = ({ children }) => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar />
       <Hero />
-      <Box component="main">{children}</Box>
+      <Box
+        component="main"
+        display="flex"
+        alignItems="center"
+        flexDirection="column"
+        width="100%"
+      >
+        {children}
+      </Box>
     </Box>
   );
 };
