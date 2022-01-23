@@ -18,7 +18,9 @@ type CustomProps = {
 
 type BreadcrumbsProps = CustomProps & MuiBreadcrumbsProps;
 
-const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ links }) => {
+const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
+  links,
+}: BreadcrumbsProps) => {
   const { formatMessage } = useIntl();
 
   return (

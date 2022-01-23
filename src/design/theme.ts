@@ -46,7 +46,7 @@ export const theme = createTheme({
   typography: {
     h1: {
       fontSize: "1.9rem",
-      fontFamily: 'Roboto Slab',
+      fontFamily: "Roboto Slab",
     },
     h2: {
       fontWeight: 600,
@@ -75,7 +75,7 @@ export const theme = createTheme({
       fontFamily: "Roboto Slab",
     },
     subtitle2: {
-      fontSize: "0.9rem",
+      fontSize: "0.8rem",
       fontFamily: "Roboto Slab",
     },
     body1: {

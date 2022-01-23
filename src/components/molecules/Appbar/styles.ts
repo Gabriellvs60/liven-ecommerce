@@ -12,6 +12,5 @@ export const StyledToolbar = styled(Toolbar)`
   display: flex;
   justify-content: space-between;
   height: 122px;
-
 `;
 

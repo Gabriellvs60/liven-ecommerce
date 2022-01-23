@@ -13,4 +13,4 @@ export const StyledHero = styled(Box)`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`
+`;
