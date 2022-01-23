@@ -38,14 +38,14 @@ export const colors: {
     },
     mercuryWhite: {
         dark: "#3f4254",
-        main: "##e5e5e5",
+        main: "#e5e5e5",
         light: "#dedede",
     },
-    concreteWhite:{
+    concreteWhite: {
         dark: "#e6e6e6",
         main: "#f2f2f2",
         light: "#f3f6f9"
-    },  
+    },
     white: {
         main: "#FFFFFF"
     }
