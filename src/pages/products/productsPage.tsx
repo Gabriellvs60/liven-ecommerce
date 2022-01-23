@@ -3,6 +3,15 @@ import React from "react";
 import ProductGridCard from "../../components/molecules/ProductGridCard";
 import ListTool from "../../components/molecules/ListTool";
 import MainTemplate from "../../components/templates/mainTemplate";
+import { productsData } from "./products.mock";
+
+type ProductProps = {
+  id: string;
+  name: string;
+  price: string;
+  image: string;
+  stock: number;
+};
 
 const ProductsPage: React.FC = () => {
   return (
@@ -30,30 +39,16 @@ const ProductsPage: React.FC = () => {
           mt={3}
           display="flex"
         >
-          <Grid item zeroMinWidth md={3}>
-            <ProductGridCard />
-          </Grid>
-          <Grid item zeroMinWidth md={3}>
-            <ProductGridCard />
-          </Grid>
-          <Grid item zeroMinWidth md={3}>
-            <ProductGridCard />
-          </Grid>
-          <Grid item zeroMinWidth md={3}>
-            <ProductGridCard />
-          </Grid>
-          <Grid item zeroMinWidth md={3}>
-            <ProductGridCard />
-          </Grid>
-          <Grid item zeroMinWidth md={3}>
-            <ProductGridCard />
-          </Grid>
-          <Grid item zeroMinWidth md={3}>
-            <ProductGridCard />
-          </Grid>
-          <Grid item zeroMinWidth md={3}>
-            <ProductGridCard />
-          </Grid>
+          {productsData.map((product: ProductProps) => (
+            <Grid item zeroMinWidth md={3}>
+              <ProductGridCard
+                name={product.name}
+                price={product.price}
+                image={product.image}
+                stock={product.stock}
+              />
+            </Grid>
+          ))}
         </Grid>
       </Box>
     </MainTemplate>

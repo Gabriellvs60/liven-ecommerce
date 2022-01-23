@@ -1,4 +1,4 @@
-export const products = [
+export const productsData = [
   {
     id: "1",
     createdAt: "2019-09-02T12:58:54.103Z",
