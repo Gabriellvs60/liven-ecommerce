@@ -1,5 +1,5 @@
 import { Box, Grid } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import ProductGridCard from "../../components/molecules/ProductGridCard";
 import ListTool from "../../components/molecules/ListTool";
 import MainTemplate from "../../components/templates/mainTemplate";
@@ -15,8 +15,13 @@ type ProductProps = {
 };
 
 const ProductsPage: React.FC = () => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen)
+  }
   return (
-    <MainTemplate>
+    <MainTemplate onClickBadge={toggleDrawer}>
       <Box
         display="flex"
         alignItems="center"
@@ -43,7 +48,7 @@ const ProductsPage: React.FC = () => {
           columnSpacing={{ xs: 10, sm: 2, md: 2, lg: 10, xl: 10 }}
         >
           {productsData.map((product: ProductProps) => (
-            <Grid item zeroMinWidth xl={3} lg={4} md={4} sm={6}>
+            <Grid item zeroMinWidth xl={3} lg={4} md={4} sm={6} key={`product-item${product.id}`}>
               <ProductGridCard
                 name={product.name}
                 price={product.price}
@@ -54,7 +59,7 @@ const ProductsPage: React.FC = () => {
           ))}
         </Grid>
       </Box>
-      <ProductDrawer open={true} onClose={() => {}} />
+     <ProductDrawer open={true} onClose={toggleDrawer} />
     </MainTemplate>
   );
 };

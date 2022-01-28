@@ -6,9 +6,11 @@ import { FiGrid } from "react-icons/fi";
 import { FaList } from "react-icons/fa";
 import { BiSearchAlt } from "react-icons/bi";
 
-type ListToolProps = {};
+type ListToolProps = {
+  hasListView?: boolean;
+};
 
-const ListTool: React.FC<ListToolProps> = () => {
+const ListTool: React.FC<ListToolProps> = ({ hasListView = false }) => {
   const { formatMessage } = useIntl();
 
   return (
@@ -17,9 +19,11 @@ const ListTool: React.FC<ListToolProps> = () => {
         <IconButton color="secondary">
           <FiGrid />
         </IconButton>
-        <IconButton color="secondary">
-          <FaList />
-        </IconButton>
+        {hasListView && (
+          <IconButton color="secondary">
+            <FaList />
+          </IconButton>
+        )}
       </Box>
       <Box display="flex" flexDirection="row">
         <InputBase

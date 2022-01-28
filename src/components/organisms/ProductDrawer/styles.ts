@@ -14,12 +14,13 @@ export const StyledDrawerTitle = styled(Box)`
 
 export const StyledDrawerContent = styled(Box)`
   overflow-y: auto;
-  background-color: yellow;
+  height: 900px;
+  margin-top: ${({ theme }) => theme.spacing(1)};
+  padding: ${({ theme }) => theme.spacing(2)};
   `
 
 export const StyledDrawerActions = styled(Box)`
     border-top: 1px solid ${({ theme }) => theme.palette.divider};
-
     display: flex;
     flex-direction: column;
     padding: ${({ theme }) => theme.spacing(2)};

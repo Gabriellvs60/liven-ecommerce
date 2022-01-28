@@ -79,12 +79,11 @@ export const theme = createTheme({
       fontFamily: "Roboto Slab",
     },
     body1: {
-      fontSize: "0.8rem",
+      fontSize: "0.9rem",
       fontFamily: "Roboto Slab",
     },
     body2: {
-      fontSize: "0.7rem",
-      lineHeight: "1.1rem",
+      fontSize: "0.9rem",
       fontFamily: "Roboto Slab",
     },
     button: {

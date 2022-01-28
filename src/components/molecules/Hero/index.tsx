@@ -30,7 +30,7 @@ const Hero: React.FC<HeroProps> = () => {
         color="white"
         textTransform="uppercase"
       >
-        {formatMessage({ id: "Shop" })}
+        {formatMessage({ id: "shop" })}
       </Typography>
       <Breadcrumbs links={links} />
     </StyledHero>

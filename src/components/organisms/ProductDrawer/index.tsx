@@ -9,6 +9,7 @@ import {
 } from "./styles";
 import { AiOutlineClose } from "react-icons/ai";
 import { useIntl } from "react-intl";
+import ProductListItem from '../../molecules/ProductListItem';
 
 type CustomProps = {};
 
@@ -20,6 +21,11 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
   onClose,
 }: ProductDrawerProps) => {
   const { formatMessage } = useIntl();
+
+  const handleDrawerClose = () => {
+    onClose?.({}, "backdropClick");
+  }
+
   return (
     <Drawer
       anchor={anchor}
@@ -33,12 +39,14 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
         <Typography variant="subtitle1" textTransform="uppercase">
           {formatMessage({ id: "shoppingCart" })}
         </Typography>
-        <IconButton sx={{ p: "10px" }} aria-label="close-drawer-btn">
+        <IconButton sx={{ p: "10px" }} aria-label="close-drawer-btn" onClick={handleDrawerClose}>
           <AiOutlineClose fontSize="18px" />
         </IconButton>
       </StyledDrawerTitle>
       <StyledDrawerContent>
-        <Box height={900}>Content</Box>
+        <ProductListItem/>
+        <ProductListItem/>
+        <ProductListItem/>
       </StyledDrawerContent>
       <StyledDrawerActions>
         <Box display="flex" flexDirection="row" justifyContent="space-between">

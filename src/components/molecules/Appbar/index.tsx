@@ -6,11 +6,14 @@ import IconButton from "../IconButton";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 
 import logo from "../../../assets/logo.jpg";
-type CustomProps = {};
+
+type CustomProps = {
+  onClickBadge?: () => void;
+};
 
 type AppBarProps = CustomProps & MuiAppBarProps;
 
-const AppBar: React.FC<AppBarProps> = () => {
+const AppBar: React.FC<AppBarProps> = ({ onClickBadge }) => {
   return (
     <StyledAppBar position="static">
       <AppBarContainer>
@@ -24,9 +27,11 @@ const AppBar: React.FC<AppBarProps> = () => {
             </Box>
           </Box>
           <Box id="appbar-actions">
-            <IconButton badgeCount={2}>
-              <HiOutlineShoppingBag fontSize="20px" />
-            </IconButton>
+            {onClickBadge && (
+              <IconButton badgeCount={2} onClick={onClickBadge}>
+                <HiOutlineShoppingBag fontSize="20px" />
+              </IconButton>
+            )}
           </Box>
         </StyledToolbar>
       </AppBarContainer>
