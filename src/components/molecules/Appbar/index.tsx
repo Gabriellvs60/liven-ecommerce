@@ -6,6 +6,7 @@ import IconButton from "../IconButton";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 
 import logo from "../../../assets/logo.jpg";
+import { useCartInfo } from '../../../store';
 
 type CustomProps = {
   onClickBadge?: () => void;
@@ -14,6 +15,9 @@ type CustomProps = {
 type AppBarProps = CustomProps & MuiAppBarProps;
 
 const AppBar: React.FC<AppBarProps> = ({ onClickBadge }) => {
+  const cartProducts = useCartInfo();
+  const cartLength = cartProducts.state.cart.length; 
+
   return (
     <StyledAppBar position="static">
       <AppBarContainer>
@@ -28,7 +32,7 @@ const AppBar: React.FC<AppBarProps> = ({ onClickBadge }) => {
           </Box>
           <Box id="appbar-actions">
             {onClickBadge && (
-              <IconButton badgeCount={2} onClick={onClickBadge}>
+              <IconButton badgeCount={cartLength} onClick={onClickBadge}>
                 <HiOutlineShoppingBag fontSize="20px" />
               </IconButton>
             )}

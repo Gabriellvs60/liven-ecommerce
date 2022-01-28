@@ -6,20 +6,19 @@ import IconButton from "../IconButton";
 import { StyledActions, TitleContainer, InfoContainer } from "./styles";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { useIntl } from "react-intl";
+import { ProductProps } from '../../../pages/products/productsPage';
 
 type ProductGridCardProps = {
-  name: string;
-  price: string;
-  image: string;
-  stock: number;
+  data: ProductProps;
+  onInsert: (e: ProductProps) => void;
 };
 
 const ProductGridCard: React.FC<ProductGridCardProps> = ({
-  image,
-  name,
-  price,
-  stock,
+  data,
+  onInsert,
 }) => {
+  const { name, price, stock} = data || {};
+
   const { formatMessage } = useIntl();
   return (
     <Card height="343px" p={0.5}>
@@ -44,7 +43,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
         </InfoContainer>
 
         <StyledActions id="actionsBox">
-          <IconButton withBackground>
+          <IconButton withBackground onClick={() => onInsert(data)}>
             <HiOutlineShoppingBag />
           </IconButton>
           <Typography variant="subtitle2" color="inherit">

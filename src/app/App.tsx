@@ -6,6 +6,7 @@ import { useRoutes } from "react-router-dom";
 import ProductsPage from "../pages/products/productsPage";
 import ProductsCartPage from "../pages/products/productsCardPage";
 import { GlobalStyles } from "../design/GlobalStyles";
+import { CartProvider } from '../store/cart';
 
 function App() {
   const element = useRoutes([
@@ -20,7 +21,9 @@ function App() {
     <IntlProvider messages={messagesInEnglish} defaultLocale="en" locale="en">
       <EmotionThemeProvider theme={styledTheme}>
         <GlobalStyles />
+        <CartProvider>
         {element}
+        </CartProvider>
       </EmotionThemeProvider>
     </IntlProvider>
   );

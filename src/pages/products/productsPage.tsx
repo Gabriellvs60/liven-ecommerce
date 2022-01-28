@@ -5,21 +5,49 @@ import ListTool from "../../components/molecules/ListTool";
 import MainTemplate from "../../components/templates/mainTemplate";
 import { productsData } from "./products.mock";
 import ProductDrawer from "../../components/organisms/ProductDrawer";
+import { useCartInfo } from "../../store";
 
-type ProductProps = {
+export type ProductProps = {
   id: string;
   name: string;
   price: string;
   image: string;
   stock: number;
+  amount?: number;
 };
 
 const ProductsPage: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const cartProducts = useCartInfo();
 
   const toggleDrawer = () => {
-    setDrawerOpen(!drawerOpen)
-  }
+    setDrawerOpen(!drawerOpen);
+  };
+
+  const handleAddProduct = (product: ProductProps) => {
+    const cartList = cartProducts.state.cart;
+    if (cartList.some((item) => item.id === product.id)) {
+      const productToAdd = cartList.find((productOnCart) => {
+        return productOnCart.id === product.id;
+      });
+      const updatedProductsList = [
+        ...cartList.filter((productToAdd) => productToAdd.id !== product.id),
+        { ...product, amount: productToAdd.amount + 1 },
+      ];
+      saveCartList(updatedProductsList);
+    } else {
+      const updatedProductsList = [...cartList, { ...product, amount: 1 }];
+      saveCartList(updatedProductsList);
+    }
+  };
+
+  const saveCartList = (productsList: any) => {
+    cartProducts.dispatch({
+      type: "SET_CART",
+      payload: { cart: productsList },
+    });
+  };
+
   return (
     <MainTemplate onClickBadge={toggleDrawer}>
       <Box
@@ -48,18 +76,25 @@ const ProductsPage: React.FC = () => {
           columnSpacing={{ xs: 10, sm: 2, md: 2, lg: 10, xl: 10 }}
         >
           {productsData.map((product: ProductProps) => (
-            <Grid item zeroMinWidth xl={3} lg={4} md={4} sm={6} key={`product-item${product.id}`}>
-              <ProductGridCard
-                name={product.name}
-                price={product.price}
-                image={product.image}
-                stock={product.stock}
-              />
+            <Grid
+              item
+              zeroMinWidth
+              xl={3}
+              lg={4}
+              md={4}
+              sm={6}
+              key={`product-item${product.id}`}
+            >
+              <ProductGridCard data={product} onInsert={handleAddProduct} />
             </Grid>
           ))}
         </Grid>
       </Box>
-     <ProductDrawer open={drawerOpen} onClose={toggleDrawer} />
+      <ProductDrawer
+        data={cartProducts.state.cart}
+        open={drawerOpen}
+        onClose={toggleDrawer}
+      />
     </MainTemplate>
   );
 };

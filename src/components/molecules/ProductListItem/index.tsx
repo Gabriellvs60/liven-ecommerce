@@ -1,14 +1,22 @@
 import { Box, Typography } from "@mui/material";
-// import { useIntl } from "react-intl";
-import { colors } from '../../../design/colors';
-import { StyledContainer } from './styles';
+import { useIntl } from "react-intl";
+import { colors } from "../../../design/colors";
+import IconButton from "../IconButton";
+import { ActionsBoxContainer, StyledContainer } from "./styles";
+import {IoRemoveCircleOutline} from "react-icons/io5";
 
 type ProductListItemProps = {
+  amount?: number;
+  name: string;
+  price: string;
 };
 
-const ProductListItem: React.FC<ProductListItemProps> = () => {
-  // const { formatMessage } = useIntl();
-  //TODO:
+const ProductListItem: React.FC<ProductListItemProps> = ({
+  amount = 0,
+  name,
+  price,
+}) => {
+  const { formatMessage } = useIntl();
   return (
     <StyledContainer>
       <Box>
@@ -19,11 +27,26 @@ const ProductListItem: React.FC<ProductListItemProps> = () => {
           alt="product"
         />
       </Box>
+      <ActionsBoxContainer id="actionsContainer">
+        <IconButton onClick={() => alert("clicked")}>
+          <IoRemoveCircleOutline fontSize="16px" />
+        </IconButton>
+      </ActionsBoxContainer>
       <Box display="flex" flexDirection="column" ml={2} mb={1}>
-        <Typography fontWeight={400} color={colors.doveGray.main} component="span" variant='subtitle1'>Blood Orange Freeze</Typography>
+        <Typography
+          fontWeight={400}
+          color={colors.doveGray.main}
+          component="span"
+          variant="subtitle1"
+        >
+          {name}
+        </Typography>
         <Box display="flex" flexDirection="row">
-          <Typography fontWeight={400}>1x</Typography>
-          <Typography variant='body2' ml={1} fontWeight={400} color="primary">$120.00</Typography>
+          <Typography fontWeight={400}>{amount}x</Typography>
+          <Typography variant="body2" ml={1} fontWeight={400} color="primary">
+            {formatMessage({ id: "currency" })}
+            {price}
+          </Typography>
         </Box>
       </Box>
     </StyledContainer>
