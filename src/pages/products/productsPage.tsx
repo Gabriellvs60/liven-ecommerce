@@ -6,6 +6,8 @@ import MainTemplate from "../../components/templates/mainTemplate";
 import { productsData } from "./products.mock";
 import ProductDrawer from "../../components/organisms/ProductDrawer";
 import { useCartInfo } from "../../store";
+import { toast } from 'react-toastify'
+import { useIntl } from 'react-intl';
 
 export type ProductProps = {
   id: string;
@@ -17,6 +19,7 @@ export type ProductProps = {
 };
 
 const ProductsPage: React.FC = () => {
+  const {formatMessage} = useIntl();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const cartProducts = useCartInfo();
 
@@ -39,6 +42,9 @@ const ProductsPage: React.FC = () => {
       const updatedProductsList = [...cartList, { ...product, amount: 1 }];
       saveCartList(updatedProductsList);
     }
+    toast.success(
+      formatMessage({id: "productAddedMessage"})
+    )
   };
 
   const handleRemoveProduct = (id: string) => {
@@ -47,6 +53,9 @@ const ProductsPage: React.FC = () => {
         ...cartList.filter((productToAdd) => productToAdd.id !== id),
       ];
       saveCartList(updatedProductsList);
+      toast.warn(
+        formatMessage({id: "productRemovedMessage"})
+      )
   };
 
   const saveCartList = (productsList: any) => {

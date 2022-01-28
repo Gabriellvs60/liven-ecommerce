@@ -7,6 +7,7 @@ import ProductsPage from "../pages/products/productsPage";
 import ProductsCartPage from "../pages/products/productsCardPage";
 import { GlobalStyles } from "../design/GlobalStyles";
 import { CartProvider } from '../store/cart';
+import { ToastContainer } from 'react-toastify'
 
 function App() {
   const element = useRoutes([
@@ -22,6 +23,15 @@ function App() {
       <EmotionThemeProvider theme={styledTheme}>
         <GlobalStyles />
         <CartProvider>
+        <ToastContainer
+          position='top-left'
+          autoClose={1500}
+          newestOnTop={true}
+          closeOnClick
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
         {element}
         </CartProvider>
       </EmotionThemeProvider>
