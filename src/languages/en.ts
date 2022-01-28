@@ -10,5 +10,7 @@ export const messagesInEnglish = {
   "subtotal": 'Subtotal',
   "viewChart": 'View Cart',
   "checkout": 'Checkout',
-  "cartIsEmpty": "Your cart is empty"
+  "cartIsEmpty": "Your cart is empty",
+  "productAddedMessage": "The product was added on your cart",
+  "productRemovedMessage": "The product was removed from your cart",
 }
