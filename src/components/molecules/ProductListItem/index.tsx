@@ -7,13 +7,17 @@ import {IoRemoveCircleOutline} from "react-icons/io5";
 
 type ProductListItemProps = {
   amount?: number;
+  id: string;
   name: string;
+  onRemove: (e: string) => void;
   price: string;
 };
 
 const ProductListItem: React.FC<ProductListItemProps> = ({
   amount = 0,
+  id,
   name,
+  onRemove,
   price,
 }) => {
   const { formatMessage } = useIntl();
@@ -28,7 +32,7 @@ const ProductListItem: React.FC<ProductListItemProps> = ({
         />
       </Box>
       <ActionsBoxContainer id="actionsContainer">
-        <IconButton onClick={() => alert("clicked")}>
+        <IconButton onClick={() => onRemove(id)}>
           <IoRemoveCircleOutline fontSize="16px" />
         </IconButton>
       </ActionsBoxContainer>

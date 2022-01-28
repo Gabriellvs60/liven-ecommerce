@@ -9,11 +9,12 @@ import {
 } from "./styles";
 import { AiOutlineClose } from "react-icons/ai";
 import { useIntl } from "react-intl";
-import ProductListItem from '../../molecules/ProductListItem';
-import { ProductProps } from '../../../pages/products/productsPage';
+import ProductListItem from "../../molecules/ProductListItem";
+import { ProductProps } from "../../../pages/products/productsPage";
 
 type CustomProps = {
   data: ProductProps[];
+  handleRemoveProduct: (e: string) => void;
 };
 
 type ProductDrawerProps = CustomProps & DrawerProps;
@@ -21,6 +22,7 @@ type ProductDrawerProps = CustomProps & DrawerProps;
 const ProductDrawer: React.FC<ProductDrawerProps> = ({
   anchor = "right",
   data,
+  handleRemoveProduct,
   open,
   onClose,
 }: ProductDrawerProps) => {
@@ -28,7 +30,7 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
 
   const handleDrawerClose = () => {
     onClose?.({}, "backdropClick");
-  }
+  };
 
   return (
     <Drawer
@@ -43,14 +45,29 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
         <Typography variant="subtitle1" textTransform="uppercase">
           {formatMessage({ id: "shoppingCart" })}
         </Typography>
-        <IconButton sx={{ p: "10px" }} aria-label="close-drawer-btn" onClick={handleDrawerClose}>
+        <IconButton
+          sx={{ p: "10px" }}
+          aria-label="close-drawer-btn"
+          onClick={handleDrawerClose}
+        >
           <AiOutlineClose fontSize="18px" />
         </IconButton>
       </StyledDrawerTitle>
       <StyledDrawerContent>
-        {data.map(product => (
-          <ProductListItem key={product.id}amount={product.amount} name={product.name} price={product.price}/>
-        ))}
+        {data.length === 0 ? (
+            <Typography>{formatMessage({id: "cartIsEmpty"})}</Typography>
+        ) : (
+          data.map((product) => (
+            <ProductListItem
+              key={product.id}
+              id={product.id}
+              amount={product.amount}
+              name={product.name}
+              price={product.price}
+              onRemove={handleRemoveProduct}
+            />
+          ))
+        )}
       </StyledDrawerContent>
       <StyledDrawerActions>
         <Box display="flex" flexDirection="row" justifyContent="space-between">

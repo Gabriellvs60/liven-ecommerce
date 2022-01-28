@@ -41,6 +41,14 @@ const ProductsPage: React.FC = () => {
     }
   };
 
+  const handleRemoveProduct = (id: string) => {
+    const cartList = cartProducts.state.cart;
+      const updatedProductsList = [
+        ...cartList.filter((productToAdd) => productToAdd.id !== id),
+      ];
+      saveCartList(updatedProductsList);
+  };
+
   const saveCartList = (productsList: any) => {
     cartProducts.dispatch({
       type: "SET_CART",
@@ -92,6 +100,7 @@ const ProductsPage: React.FC = () => {
       </Box>
       <ProductDrawer
         data={cartProducts.state.cart}
+        handleRemoveProduct={handleRemoveProduct}
         open={drawerOpen}
         onClose={toggleDrawer}
       />
