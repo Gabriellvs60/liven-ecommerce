@@ -10,13 +10,17 @@ import {
 import { AiOutlineClose } from "react-icons/ai";
 import { useIntl } from "react-intl";
 import ProductListItem from '../../molecules/ProductListItem';
+import { ProductProps } from '../../../pages/products/productsPage';
 
-type CustomProps = {};
+type CustomProps = {
+  data: ProductProps[];
+};
 
 type ProductDrawerProps = CustomProps & DrawerProps;
 
 const ProductDrawer: React.FC<ProductDrawerProps> = ({
   anchor = "right",
+  data,
   open,
   onClose,
 }: ProductDrawerProps) => {
@@ -44,9 +48,9 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
         </IconButton>
       </StyledDrawerTitle>
       <StyledDrawerContent>
-        <ProductListItem/>
-        <ProductListItem/>
-        <ProductListItem/>
+        {data.map(product => (
+          <ProductListItem key={product.id}amount={product.amount} name={product.name} price={product.price}/>
+        ))}
       </StyledDrawerContent>
       <StyledDrawerActions>
         <Box display="flex" flexDirection="row" justifyContent="space-between">
