@@ -59,7 +59,7 @@ const ProductsPage: React.FC = () => {
           ))}
         </Grid>
       </Box>
-     <ProductDrawer open={true} onClose={toggleDrawer} />
+     <ProductDrawer open={drawerOpen} onClose={toggleDrawer} />
     </MainTemplate>
   );
 };
