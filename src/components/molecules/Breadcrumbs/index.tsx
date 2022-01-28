@@ -26,8 +26,8 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   return (
     <MuiBreadcrumbs>
       {links.map((link) => (
-        <MuiLink href={link.href}>
-          <Typography variant="h6" textTransform="uppercase">
+        <MuiLink href={link.href} key={link.labelId}>
+          <Typography component="span" variant="h6" textTransform="uppercase">
             {formatMessage({ id: link.labelId })}
           </Typography>
         </MuiLink>

@@ -16,10 +16,12 @@ const IconButton: React.FC<IconButtonProps> = ({
   badgeCount = null,
   children,
   withBackground,
+  onClick,
 }: IconButtonProps) => {
   return (
     <Badge badgeContent={badgeCount} color="primary">
       <StyledIconButton
+        onClick={onClick}
         color={color}
         aria-label="icon-button"
         $withBackground={withBackground}
