@@ -15,6 +15,9 @@ import { ProductProps } from "../../../pages/products/productsPage";
 type CustomProps = {
   data: ProductProps[];
   handleRemoveProduct: (e: string) => void;
+  onDecrementProduct: (e: string) => void;
+  onIncrementProduct: (e: string)=> void;
+
 };
 
 type ProductDrawerProps = CustomProps & DrawerProps;
@@ -24,6 +27,8 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
   data,
   handleRemoveProduct,
   open,
+  onDecrementProduct,
+  onIncrementProduct,
   onClose,
 }: ProductDrawerProps) => {
   const { formatMessage } = useIntl();
@@ -76,6 +81,8 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
               amount={product.amount}
               name={product.name}
               price={product.price}
+              onDecrementProduct={onDecrementProduct}
+              onIncrementProduct={onIncrementProduct}
               onRemove={handleRemoveProduct}
             />
           ))
