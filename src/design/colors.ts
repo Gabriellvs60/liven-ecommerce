@@ -44,7 +44,7 @@ export const colors: {
     concreteWhite: {
         dark: "#e6e6e6",
         main: "#f2f2f2",
-        light: "#f3f6f9"
+        light: "#fafafa"
     },
     white: {
         main: "#FFFFFF"

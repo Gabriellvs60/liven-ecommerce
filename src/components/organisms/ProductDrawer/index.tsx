@@ -72,6 +72,7 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
             <ProductListItem
               key={product.id}
               id={product.id}
+              imageUrl={product.image}
               amount={product.amount}
               name={product.name}
               price={product.price}
