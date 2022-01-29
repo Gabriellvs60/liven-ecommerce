@@ -12,7 +12,7 @@ type ProductListItemProps = {
   id: string;
   name: string;
   image: string;
-  price: string;
+  price: number;
   onRemove: (e: string) => void;
   onDecrementProduct: (e: string) => void;
   onIncrementProduct: (e: string) => void;

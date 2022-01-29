@@ -40,7 +40,7 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
     let subtotal = 0;
     if (data && data.length > 0) {
       data.forEach((product) => {
-        subtotal = subtotal + (product.amount || 0) * parseFloat(product.price);
+        subtotal = subtotal + (product.amount || 0) * product.price;
       });
       return subtotal.toFixed(2);
     }
@@ -78,7 +78,7 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
               id={product.id}
               image={product.image}
               amount={product.amount}
-              name={product.name}
+              name={product.title}
               price={product.price}
               onDecrementProduct={onDecrementProduct}
               onIncrementProduct={onIncrementProduct}

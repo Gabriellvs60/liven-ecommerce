@@ -23,7 +23,7 @@ const IconButton: React.FC<IconButtonProps> = ({
   return (
     <Badge badgeContent={badgeCount} color="primary">
       <StyledIconButton
-      $bgColorHover={bgColorHover}
+        $bgColorHover={bgColorHover}
         onClick={onClick}
         color={color}
         aria-label="icon-button"
