@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import React, { PropsWithChildren } from "react";
-import AppBar from "../../molecules/Appbar";
+import AppBar from "../../organisms/Appbar";
 import Hero from "../../molecules/Hero";
 import { StyledContainer, StyledFab } from "./styles";
 import { HiOutlineShoppingBag } from "react-icons/hi";
