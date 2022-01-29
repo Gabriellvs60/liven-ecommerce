@@ -16,8 +16,7 @@ type CustomProps = {
   data: ProductProps[];
   handleRemoveProduct: (e: string) => void;
   onDecrementProduct: (e: string) => void;
-  onIncrementProduct: (e: string)=> void;
-
+  onIncrementProduct: (e: string) => void;
 };
 
 type ProductDrawerProps = CustomProps & DrawerProps;
@@ -39,14 +38,14 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
 
   const calculateSubtotal = () => {
     let subtotal = 0;
-    if(data && data.length > 0){
+    if (data && data.length > 0) {
       data.forEach((product) => {
-        subtotal = subtotal + ((product.amount || 0) * parseFloat(product.price))
-      })
+        subtotal = subtotal + (product.amount || 0) * parseFloat(product.price);
+      });
       return subtotal.toFixed(2);
     }
     return subtotal.toFixed(2);
-  }
+  };
 
   return (
     <Drawer
@@ -71,13 +70,13 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
       </StyledDrawerTitle>
       <StyledDrawerContent>
         {data.length === 0 ? (
-            <Typography>{formatMessage({id: "cartIsEmpty"})}</Typography>
+          <Typography>{formatMessage({ id: "cartIsEmpty" })}</Typography>
         ) : (
           data.map((product) => (
             <ProductListItem
               key={product.id}
               id={product.id}
-              imageUrl={product.image}
+              image={product.image}
               amount={product.amount}
               name={product.name}
               price={product.price}
