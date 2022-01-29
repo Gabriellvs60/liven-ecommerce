@@ -4,7 +4,7 @@ import { messagesInEnglish } from "../languages/en";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { useRoutes } from "react-router-dom";
 import ProductsPage from "../pages/products/productsPage";
-import ProductsCartPage from "../pages/products/productsCardPage";
+import ProductsCartPage from "../pages/products/productsCartPage";
 import { GlobalStyles } from "../design/GlobalStyles";
 import { CartProvider } from '../store/cart';
 import { ToastContainer } from 'react-toastify'
