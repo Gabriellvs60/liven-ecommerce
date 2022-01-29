@@ -10,7 +10,7 @@ export default {
     id: "1",
     name: "Tomato",
     image: require("../../../assets/vegetableHero.jpg"),
-    price: "12.00",
+    price: 12.0,
     onRemove: () => {},
     onDecrementProduct: () => {},
     onIncrementProduct: () => {},

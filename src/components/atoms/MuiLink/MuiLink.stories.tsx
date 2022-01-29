@@ -9,7 +9,12 @@ export default {
 
 export const Primary: ComponentStory<typeof MuiLink> = () => (
   <MuiLink>
-    <Typography component="span" variant="h6" textTransform="uppercase" color="secondary">
+    <Typography
+      component="span"
+      variant="h6"
+      textTransform="uppercase"
+      color="secondary"
+    >
       MUI link example
     </Typography>
   </MuiLink>

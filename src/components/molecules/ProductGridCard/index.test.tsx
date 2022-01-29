@@ -11,10 +11,9 @@ describe("ProductGridCard molecule", () => {
       <ProductGridCard
         data={{
           id: "1",
-          name: "Tomato",
-          price: "220.00",
+          title: "Tomato",
+          price: 220.0,
           image: "",
-          stock: 1,
           amount: 1,
         }}
         onInsert={() => {}}

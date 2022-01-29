@@ -8,10 +8,8 @@ export default {
   args: {
     data: {
       id: "1",
-      createdAt: "2019-09-02T12:58:54.103Z",
-      name: "Rustic Metal Fish",
-      price: "289.00",
-      stock: 65171,
+      title: "Rustic Metal Fish",
+      price: 289.0,
       image: require("../../../assets/vegetableHero.jpg"),
     },
     onInsert: () => {},

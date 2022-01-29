@@ -6,8 +6,8 @@ import IconButton from "../IconButton";
 import { StyledActions, TitleContainer, InfoContainer } from "./styles";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { useIntl } from "react-intl";
-import { ProductProps } from '../../../pages/products/productsPage';
-import { useTheme } from '@emotion/react';
+import { ProductProps } from "../../../pages/products/productsPage";
+import { useTheme } from "@emotion/react";
 
 type ProductGridCardProps = {
   data: ProductProps;
@@ -18,8 +18,8 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
   data,
   onInsert,
 }) => {
-  const { name, price, stock} = data || {};
-  const {palette} = useTheme();
+  const { title, price } = data || {};
+  const { palette } = useTheme();
   const { formatMessage } = useIntl();
   return (
     <Card height="343px" p={0.5} bgcolor={palette.background.default}>
@@ -32,7 +32,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
           textAlign="center"
           textTransform="uppercase"
         >
-          {name}
+          {title}
         </Typography>
 
         <InfoContainer id="infoBox">
@@ -48,9 +48,9 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
           <IconButton withBackground onClick={() => onInsert(data)}>
             <HiOutlineShoppingBag />
           </IconButton>
-          <Typography variant="subtitle2" color="inherit">
+          {/* <Typography variant="subtitle2" color="inherit">
             {stock} {formatMessage({ id: "inStock" })}
-          </Typography>
+          </Typography> */}
         </StyledActions>
       </TitleContainer>
 
