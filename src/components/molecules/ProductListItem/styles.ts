@@ -21,9 +21,9 @@ export const StyledContainer = styled(Box)`
 
 export const ActionsBoxContainer = styled(Box)`
   position: absolute;
-  top: 0px;
+  bottom: 0px;
   right: ${({ theme }) => theme.spacing(1)};
   visibility: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 `

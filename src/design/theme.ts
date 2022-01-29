@@ -71,7 +71,7 @@ export const theme = createTheme({
       fontFamily: "Roboto Slab",
     },
     subtitle1: {
-      fontSize: "1rem",
+      fontSize: "0.7rem",
       fontFamily: "Roboto Slab",
     },
     subtitle2: {
