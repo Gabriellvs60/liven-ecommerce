@@ -28,6 +28,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
           variant="subtitle1"
           color="text"
           mb={1}
+          textAlign="center"
           textTransform="uppercase"
         >
           {name}

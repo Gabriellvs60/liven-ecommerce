@@ -2,7 +2,7 @@ import { Box, Grid } from "@mui/material";
 import React, { useState } from "react";
 import ProductGridCard from "../../components/molecules/ProductGridCard";
 import ListTool from "../../components/molecules/ListTool";
-import MainTemplate from "../../components/templates/mainTemplate";
+import MainTemplate from "../../components/templates/MainTemplate/mainTemplate";
 import { productsData } from "./products.mock";
 import ProductDrawer from "../../components/organisms/ProductDrawer";
 import { useCartInfo } from "../../store";
@@ -66,7 +66,7 @@ const ProductsPage: React.FC = () => {
   };
 
   return (
-    <MainTemplate onClickBadge={toggleDrawer}>
+    <MainTemplate onClickBadge={toggleDrawer} onClickFab={toggleDrawer}>
       <Box
         display="flex"
         alignItems="center"
