@@ -38,9 +38,9 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
       data.forEach((product) => {
         subtotal = subtotal + ((product.amount || 0) * parseFloat(product.price))
       })
-      return subtotal;
+      return subtotal.toFixed(2);
     }
-    return subtotal;
+    return subtotal.toFixed(2);
   }
 
   return (
