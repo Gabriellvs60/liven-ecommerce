@@ -1,5 +1,11 @@
 import styled from "@emotion/styled";
-import { Fab } from "@mui/material";
+import { Box, Fab } from "@mui/material";
+import { colors } from '../../../design/colors';
+
+export const StyledContainer = styled(Box)`
+  flex-grow: 1;
+  background-color: ${colors.concreteWhite.light};
+`;
 
 export const StyledFab = styled(Fab)`
   margin: 0px;

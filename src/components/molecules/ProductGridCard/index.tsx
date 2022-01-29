@@ -7,6 +7,7 @@ import { StyledActions, TitleContainer, InfoContainer } from "./styles";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { useIntl } from "react-intl";
 import { ProductProps } from '../../../pages/products/productsPage';
+import { useTheme } from '@emotion/react';
 
 type ProductGridCardProps = {
   data: ProductProps;
@@ -18,10 +19,10 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
   onInsert,
 }) => {
   const { name, price, stock} = data || {};
-
+  const {palette} = useTheme();
   const { formatMessage } = useIntl();
   return (
-    <Card height="343px" p={0.5}>
+    <Card height="343px" p={0.5} bgcolor={palette.background.default}>
       <TitleContainer>
         <Typography
           fontWeight={500}
@@ -58,7 +59,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
           height="100%"
           component="img"
           style={{ borderRadius: "4px" }}
-          image={require("../../../assets/product_orange.jpg")}
+          image={`${data.image}?random=${data.id}`}
           alt="Product Image"
         />
       </Box>
