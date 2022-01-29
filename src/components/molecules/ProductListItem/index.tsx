@@ -11,17 +11,17 @@ type ProductListItemProps = {
   amount?: number;
   id: string;
   name: string;
-  imageUrl: string;
-  onRemove: (e: string) => void;
-  onDecrementProduct: (e:string) => void;
-  onIncrementProduct: (e: string)=> void;
+  image: string;
   price: string;
+  onRemove: (e: string) => void;
+  onDecrementProduct: (e: string) => void;
+  onIncrementProduct: (e: string) => void;
 };
 
 const ProductListItem: React.FC<ProductListItemProps> = ({
   amount = 0,
   id,
-  imageUrl,
+  image,
   name,
   onDecrementProduct,
   onIncrementProduct,
@@ -35,7 +35,7 @@ const ProductListItem: React.FC<ProductListItemProps> = ({
         <img
           width="70px"
           height="70px"
-          src={`${imageUrl}?random=${id}`}
+          src={`${image}?random=${id}`}
           alt="product"
         />
       </Box>
@@ -43,10 +43,16 @@ const ProductListItem: React.FC<ProductListItemProps> = ({
         <IconButton onClick={() => onRemove(id)} bgColorHover="transparent">
           <BsFillTrash2Fill fontSize="16px" />
         </IconButton>
-        <IconButton onClick={() => onIncrementProduct(id)} bgColorHover="transparent">
+        <IconButton
+          onClick={() => onIncrementProduct(id)}
+          bgColorHover="transparent"
+        >
           <IoIosAddCircleOutline fontSize="16px" />
         </IconButton>
-        <IconButton onClick={() => onDecrementProduct(id)} bgColorHover="transparent">
+        <IconButton
+          onClick={() => onDecrementProduct(id)}
+          bgColorHover="transparent"
+        >
           <IoRemoveCircleOutline fontSize="16px" />
         </IconButton>
       </ActionsBoxContainer>
