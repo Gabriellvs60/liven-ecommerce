@@ -266,7 +266,7 @@ exports[`ProductListItem molecule renders correctly 1`] = `
         "pxToRem": [Function],
         "subtitle1": Object {
           "fontFamily": "Roboto Slab",
-          "fontSize": "1rem",
+          "fontSize": "0.7rem",
           "fontWeight": 400,
           "letterSpacing": "0.00938em",
           "lineHeight": 1.75,
@@ -606,7 +606,7 @@ exports[`ProductListItem molecule renders correctly 1`] = `
           "pxToRem": [Function],
           "subtitle1": Object {
             "fontFamily": "Roboto Slab",
-            "fontSize": "1rem",
+            "fontSize": "0.7rem",
             "fontWeight": 400,
             "letterSpacing": "0.00938em",
             "lineHeight": 1.75,
@@ -639,7 +639,7 @@ exports[`ProductListItem molecule renders correctly 1`] = `
       onDecrementProduct={[Function]}
       onIncrementProduct={[Function]}
       onRemove={[Function]}
-      price="12.00"
+      price={12}
     />
     <CssBaseline />
     <GlobalStyles />

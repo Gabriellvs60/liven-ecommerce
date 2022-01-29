@@ -13,7 +13,7 @@ describe("ProductListItem molecule", () => {
         id="1"
         name="Tomato"
         image=""
-        price="12.00"
+        price={12.0}
         onRemove={() => {}}
         onDecrementProduct={() => {}}
         onIncrementProduct={() => {}}
