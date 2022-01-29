@@ -30,14 +30,7 @@ const ProductsPage: React.FC = () => {
   const handleAddProduct = (product: ProductProps) => {
     const cartList = cartProducts.state.cart;
     if (cartList.some((item) => item.id === product.id)) {
-      const productToAdd = cartList.find((productOnCart) => {
-        return productOnCart.id === product.id;
-      });
-      const updatedProductsList = [
-        ...cartList.filter((productToAdd) => productToAdd.id !== product.id),
-        { ...product, amount: productToAdd.amount + 1 },
-      ];
-      saveCartList(updatedProductsList);
+      handleIncrementProduct(product.id);
     } else {
       const updatedProductsList = [...cartList, { ...product, amount: 1 }];
       saveCartList(updatedProductsList);
@@ -46,6 +39,40 @@ const ProductsPage: React.FC = () => {
       formatMessage({id: "productAddedMessage"})
     )
   };
+
+  const handleIncrementProduct = (id: string) => {
+    const cartList = cartProducts.state.cart;
+    const updatedCartList = cartList.map((product) => {
+      if(product.id === id){
+        return {
+          ...product,
+          amount: product.amount + 1
+        }
+      }
+      return product;
+    });
+    saveCartList(updatedCartList);
+  }
+
+  const handleDecrementProduct = (id: string) => {
+    const cartList = cartProducts.state.cart;
+    const productToDecrement = cartList.find((productOnCart) => {
+      return productOnCart.id === id;
+    });
+    if(productToDecrement.amount === 1){
+      handleRemoveProduct(productToDecrement.id)
+    }else{
+      const updatedCartList = cartList.map((product) => {
+        if(product.id === id){
+         return {
+          ...product, 
+          amount: product.amount = product.amount -1};
+        }
+        return product
+      });
+      saveCartList(updatedCartList);
+    }
+  }
 
   const handleRemoveProduct = (id: string) => {
     const cartList = cartProducts.state.cart;
@@ -111,6 +138,8 @@ const ProductsPage: React.FC = () => {
         data={cartProducts.state.cart}
         handleRemoveProduct={handleRemoveProduct}
         open={drawerOpen}
+        onDecrementProduct={handleDecrementProduct}
+        onIncrementProduct={handleIncrementProduct}
         onClose={toggleDrawer}
       />
     </MainTemplate>

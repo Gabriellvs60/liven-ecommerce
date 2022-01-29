@@ -3,7 +3,9 @@ import { useIntl } from "react-intl";
 import { colors } from "../../../design/colors";
 import IconButton from "../IconButton";
 import { ActionsBoxContainer, StyledContainer } from "./styles";
-import {IoRemoveCircleOutline} from "react-icons/io5";
+import { IoRemoveCircleOutline } from "react-icons/io5";
+import { IoIosAddCircleOutline } from "react-icons/io";
+import { BsFillTrash2Fill } from "react-icons/bs";
 
 type ProductListItemProps = {
   amount?: number;
@@ -11,6 +13,8 @@ type ProductListItemProps = {
   name: string;
   imageUrl: string;
   onRemove: (e: string) => void;
+  onDecrementProduct: (e:string) => void;
+  onIncrementProduct: (e: string)=> void;
   price: string;
 };
 
@@ -19,6 +23,8 @@ const ProductListItem: React.FC<ProductListItemProps> = ({
   id,
   imageUrl,
   name,
+  onDecrementProduct,
+  onIncrementProduct,
   onRemove,
   price,
 }) => {
@@ -29,12 +35,18 @@ const ProductListItem: React.FC<ProductListItemProps> = ({
         <img
           width="70px"
           height="70px"
-          src={imageUrl}
+          src={`${imageUrl}?random=${id}`}
           alt="product"
         />
       </Box>
       <ActionsBoxContainer id="actionsContainer">
-        <IconButton onClick={() => onRemove(id)}>
+        <IconButton onClick={() => onRemove(id)} bgColorHover="transparent">
+          <BsFillTrash2Fill fontSize="16px" />
+        </IconButton>
+        <IconButton onClick={() => onIncrementProduct(id)} bgColorHover="transparent">
+          <IoIosAddCircleOutline fontSize="16px" />
+        </IconButton>
+        <IconButton onClick={() => onDecrementProduct(id)} bgColorHover="transparent">
           <IoRemoveCircleOutline fontSize="16px" />
         </IconButton>
       </ActionsBoxContainer>
