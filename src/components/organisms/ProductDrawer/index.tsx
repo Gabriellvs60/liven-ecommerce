@@ -32,6 +32,17 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
     onClose?.({}, "backdropClick");
   };
 
+  const calculateSubtotal = () => {
+    let subtotal = 0;
+    if(data && data.length > 0){
+      data.forEach((product) => {
+        subtotal = subtotal + ((product.amount || 0) * parseFloat(product.price))
+      })
+      return subtotal;
+    }
+    return subtotal;
+  }
+
   return (
     <Drawer
       anchor={anchor}
@@ -84,7 +95,7 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
             color="primary"
             textTransform="uppercase"
           >
-            $120.00
+            ${calculateSubtotal()}
           </Typography>
         </Box>
         <Box mt={1}>
