@@ -3,12 +3,11 @@
  */
 import React from "react";
 import { wrapper } from "../../../helpers/enzymeWrapper";
+import ListTool from "./index";
 
-import Card from "./index";
-
-describe("Card atom", () => {
+describe("ListTool molecule", () => {
   it("renders correctly", () => {
-    const tree = wrapper(<Card>Contentss</Card>, "shallow");
+    const tree = wrapper(<ListTool hasListView />, "shallow");
     expect(tree).toMatchSnapshot();
   });
 });

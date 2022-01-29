@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card atom renders correctly 1`] = `
+exports[`Breadcrumbs molecule renders correctly 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -631,9 +631,24 @@ exports[`Card atom renders correctly 1`] = `
       }
     }
   >
-    <Card>
-      Contentss
-    </Card>
+    <Breadcrumbs
+      links={
+        Array [
+          Object {
+            "href": "/",
+            "labelId": "home",
+          },
+          Object {
+            "href": "/",
+            "labelId": "shop",
+          },
+          Object {
+            "href": "/",
+            "labelId": "page3",
+          },
+        ]
+      }
+    />
     <CssBaseline />
     <GlobalStyles />
   </ThemeProvider>

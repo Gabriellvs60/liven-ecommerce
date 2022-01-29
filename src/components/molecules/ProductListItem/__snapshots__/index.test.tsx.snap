@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card atom renders correctly 1`] = `
+exports[`ProductListItem molecule renders correctly 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -631,9 +631,16 @@ exports[`Card atom renders correctly 1`] = `
       }
     }
   >
-    <Card>
-      Contentss
-    </Card>
+    <ProductListItem
+      amount={0}
+      id="1"
+      image=""
+      name="Tomato"
+      onDecrementProduct={[Function]}
+      onIncrementProduct={[Function]}
+      onRemove={[Function]}
+      price="12.00"
+    />
     <CssBaseline />
     <GlobalStyles />
   </ThemeProvider>

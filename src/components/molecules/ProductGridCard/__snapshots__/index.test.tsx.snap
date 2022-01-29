@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card atom renders correctly 1`] = `
+exports[`ProductGridCard molecule renders correctly 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -631,9 +631,19 @@ exports[`Card atom renders correctly 1`] = `
       }
     }
   >
-    <Card>
-      Contentss
-    </Card>
+    <ProductGridCard
+      data={
+        Object {
+          "amount": 1,
+          "id": "1",
+          "image": "",
+          "name": "Tomato",
+          "price": "220.00",
+          "stock": 1,
+        }
+      }
+      onInsert={[Function]}
+    />
     <CssBaseline />
     <GlobalStyles />
   </ThemeProvider>

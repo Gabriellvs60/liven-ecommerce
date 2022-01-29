@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card atom renders correctly 1`] = `
+exports[`MuiLink atom renders correctly 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -631,9 +631,17 @@ exports[`Card atom renders correctly 1`] = `
       }
     }
   >
-    <Card>
-      Contentss
-    </Card>
+    <MuiLink
+      href="./"
+    >
+      <ForwardRef(Typography)
+        component="span"
+        textTransform="uppercase"
+        variant="h6"
+      >
+        Link
+      </ForwardRef(Typography)>
+    </MuiLink>
     <CssBaseline />
     <GlobalStyles />
   </ThemeProvider>

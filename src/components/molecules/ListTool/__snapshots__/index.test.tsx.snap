@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card atom renders correctly 1`] = `
+exports[`ListTool molecule renders correctly 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -631,9 +631,9 @@ exports[`Card atom renders correctly 1`] = `
       }
     }
   >
-    <Card>
-      Contentss
-    </Card>
+    <ListTool
+      hasListView={true}
+    />
     <CssBaseline />
     <GlobalStyles />
   </ThemeProvider>

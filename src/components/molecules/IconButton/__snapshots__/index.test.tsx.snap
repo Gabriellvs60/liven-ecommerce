@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card atom renders correctly 1`] = `
+exports[`IconButton molecule renders correctly 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -631,9 +631,13 @@ exports[`Card atom renders correctly 1`] = `
       }
     }
   >
-    <Card>
-      Contentss
-    </Card>
+    <IconButton
+      badgeCount={2}
+    >
+      <HiOutlineShoppingBag
+        fontSize="20px"
+      />
+    </IconButton>
     <CssBaseline />
     <GlobalStyles />
   </ThemeProvider>
