@@ -86,3 +86,4 @@ Run Storybook on http://localhost:6006/
 ## 🛠 Habilities
 Javascript, HTML, CSS, React, Typescript, React Native, GraphQl, Apollo, Hasura, Atomic Design, Styled Components, Jest, Cypress.
 
+![image](https://user-images.githubusercontent.com/11982574/151710181-47942d09-dc18-4cbe-b239-ec6beeb1208f.png)
