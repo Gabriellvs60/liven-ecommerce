@@ -22,8 +22,13 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
   const { palette } = useTheme();
   const { formatMessage } = useIntl();
   return (
-    <Card height="343px" p={0.5} bgcolor={palette.background.default}>
-      <TitleContainer>
+    <Card
+      height="343px"
+      p={0.5}
+      bgcolor={palette.background.default}
+      data-cy="product-grid-card"
+    >
+      <TitleContainer id="title-container">
         <Typography
           fontWeight={500}
           variant="subtitle1"
@@ -48,9 +53,6 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
           <IconButton withBackground onClick={() => onInsert(data)}>
             <HiOutlineShoppingBag />
           </IconButton>
-          {/* <Typography variant="subtitle2" color="inherit">
-            {stock} {formatMessage({ id: "inStock" })}
-          </Typography> */}
         </StyledActions>
       </TitleContainer>
 
