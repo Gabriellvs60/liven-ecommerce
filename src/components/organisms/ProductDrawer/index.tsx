@@ -55,12 +55,14 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
       PaperProps={{
         sx: { width: "350px" },
       }}
+      data-cy="product-drawer"
     >
-      <StyledDrawerTitle>
+      <StyledDrawerTitle id="drawer-title">
         <Typography variant="subtitle1" textTransform="uppercase">
           {formatMessage({ id: "shoppingCart" })}
         </Typography>
         <IconButton
+          data-cy="close-drawer-btn"
           sx={{ p: "10px" }}
           aria-label="close-drawer-btn"
           onClick={handleDrawerClose}
