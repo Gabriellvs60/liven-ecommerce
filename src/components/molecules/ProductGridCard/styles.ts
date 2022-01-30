@@ -1,6 +1,14 @@
 import styled from "@emotion/styled";
-import { Box, IconButton } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
+import Card from '../../atoms/Card';
 
+export const StyledCard = styled(Card)`
+  height: 343px;
+  padding: ${({ theme }) => theme.spacing(0.5)};
+  @media (max-width: 380px) {
+    width: 240px;
+  }
+`;
 export const StyledIconButton = styled(IconButton)`
   .MuiBadge-root {
     top: 5px;
@@ -27,6 +35,14 @@ export const TitleContainer = styled(Box)`
       transition: 0.2s;
     }
   }
+`;
+
+export const StyledTitle = styled(Typography)`
+  font-weight: 500;
+  margin-bottom: ${({ theme }) => theme.spacing(1)};
+  text-align: center;
+  text-transform: uppercase;
+  word-break: break-word;
 `;
 
 export const InfoContainer = styled(Box)`
