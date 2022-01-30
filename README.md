@@ -44,13 +44,20 @@ Start the application
   npm run start
 ```
 
+## Tests e2e Cypress
+
+Open cypress
+
+```bash
+  npm run cypress:open
+```
 
 ## Tests with Jest
 
 Run test
 
 ```bash
-  npm run jest-test
+  npm run cypress open
 ```
 
 Update Snapshots
