@@ -106,8 +106,6 @@ const ProductsPage: React.FC = () => {
     });
   };
 
-  console.log(loading);
-  console.log(data);
   return (
     <MainTemplate onClickBadge={toggleDrawer} onClickFab={toggleDrawer}>
       <Box
