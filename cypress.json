@@ -7,7 +7,7 @@
     "SNAPSHOT_BASE_DIRECTORY": "./cypress/screenshots/base",
     "SNAPSHOT_DIFF_DIRECTORY": "./cypress/screenshots/diff"
   },
-  "testFiles": "**/*.test.{js,ts,jsx,tsx}",
+  "testFiles": "**/*.feature.{js,ts,jsx,tsx}",
   "trashAssetsBeforeRuns": true,
   "screenshotsFolder": "./cypress/screenshots/actual",
   "viewportWidth": 1280,

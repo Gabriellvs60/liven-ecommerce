@@ -42,8 +42,8 @@
     "build-storybook": "build-storybook -s public",
     "jest-update-snapshot": "jest --updateSnapshot",
     "jest-test": "jest",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "eslintConfig": {
     "extends": [
