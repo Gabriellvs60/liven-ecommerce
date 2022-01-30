@@ -42,17 +42,16 @@ Start the application
 
 ## Tests e2e Cypress
 
-Test cypress
 Start the application before run cypress
 
 ```bash
-  npm run cypress:run
+  npm run cy:run
 ```
 
 Open cypress
 
 ```bash
-  npm run cypress:open
+  npm run cy:open
 ```
 
 ## Tests with Jest
