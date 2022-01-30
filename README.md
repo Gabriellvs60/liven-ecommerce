@@ -46,6 +46,13 @@ Start the application
 
 ## Tests e2e Cypress
 
+Test cypress
+Start the application before run cypress
+
+```bash
+  npm run cypress:run
+```
+
 Open cypress
 
 ```bash
