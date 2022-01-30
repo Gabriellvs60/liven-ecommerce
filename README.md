@@ -60,7 +60,7 @@ Open cypress
 Run test
 
 ```bash
-  npm run cypress open
+  npm run jest-test
 ```
 
 Update Snapshots
