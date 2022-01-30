@@ -1,9 +1,14 @@
 import { Box, CardMedia, Typography } from "@mui/material";
 import React from "react";
-import Card from "../../atoms/Card";
 import { StyledDivider } from "../../atoms/Divider/styles";
 import IconButton from "../IconButton";
-import { StyledActions, TitleContainer, InfoContainer } from "./styles";
+import {
+  StyledActions,
+  TitleContainer,
+  InfoContainer,
+  StyledTitle,
+  StyledCard,
+} from "./styles";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { useIntl } from "react-intl";
 import { ProductProps } from "../../../pages/products/productsPage";
@@ -22,23 +27,14 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
   const { palette } = useTheme();
   const { formatMessage } = useIntl();
   return (
-    <Card
-      height="343px"
-      p={0.5}
+    <StyledCard
       bgcolor={palette.background.default}
       data-cy="product-grid-card"
     >
       <TitleContainer id="title-container">
-        <Typography
-          fontWeight={500}
-          variant="subtitle1"
-          color="text"
-          mb={1}
-          textAlign="center"
-          textTransform="uppercase"
-        >
+        <StyledTitle variant="subtitle1" color="text">
           {title}
-        </Typography>
+        </StyledTitle>
 
         <InfoContainer id="infoBox">
           <Typography fontWeight={700} variant="subtitle1" color="primary">
@@ -65,7 +61,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
           alt="Product Image"
         />
       </Box>
-    </Card>
+    </StyledCard>
   );
 };
 
