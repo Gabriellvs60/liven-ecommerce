@@ -92,14 +92,14 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
       <StyledDrawerActions>
         <Box display="flex" flexDirection="row" justifyContent="space-between">
           <Typography
-            variant="subtitle1"
+            variant="h6"
             fontWeight={500}
             textTransform="uppercase"
           >
             {formatMessage({ id: "subtotal" })}:
           </Typography>
           <Typography
-            variant="subtitle1"
+            variant="h6"
             fontWeight={500}
             color="primary"
             textTransform="uppercase"
