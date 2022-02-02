@@ -15,16 +15,14 @@ Given(/^I visit ProductsPage$/, () => {
 
 When(/^I click on add item badge button on card$/, () => {
   cy.get(':nth-child(1) > [data-cy="product-grid-card"] > #title-container').first().trigger('mouseover');
-  cy.get(':nth-child(1) > [data-cy="product-grid-card"] > #title-container > #actionsBox > .MuiBadge-root > .MuiButtonBase-root')
+  cy.get(':nth-child(1) > [data-cy="product-grid-card"] > #title-container > #actionsBox > .MuiBadge-root > .MuiButtonBase-root', {timeout: 10000})
     .click({ force: true });
-    cy.wait(300)
 });
 
 When(/^I click on add item badge button on second card$/, () => {
   cy.get(':nth-child(2) > [data-cy="product-grid-card"] > #title-container').first().trigger('mouseover');
-  cy.get(':nth-child(2) > [data-cy="product-grid-card"] > #title-container > #actionsBox > .MuiBadge-root > .MuiButtonBase-root')
+  cy.get(':nth-child(2) > [data-cy="product-grid-card"] > #title-container > #actionsBox > .MuiBadge-root > .MuiButtonBase-root', {timeout: 10000})
     .click({ force: true });
-    cy.wait(300)
 });
 
 Then(/^Must have one item on cart$/, () => {
