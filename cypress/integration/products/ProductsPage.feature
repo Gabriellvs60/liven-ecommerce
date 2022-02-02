@@ -1,17 +1,16 @@
 Feature: ProductsPage
 
-As a user, i want to navigate on module ProductsPage and do basic anctions 
+As a user, i want to navigate on module ProductsPage and do basic interactions 
 
 Scenario: Insert products on cart
-  Given I visit Products ProductsPage
+  Given I visit ProductsPage
   When I click on add item badge button on card
-  And I want to insert one product on cart
-  When I click on add item badge button
-  Then I must have two items on cart
+  Then Must have one item on cart
+  When I click on add item badge button on second card
+  Then Must have two items on cart
 
 Scenario: Explore sideview component
-    Given I click on add item badge button on card
-    And I open the sideview by Fab
-    Then the sideview should be open
-    Then i close the sideview
-
+  When I click on add item badge button on card
+  And I open the sideview by Fab
+  Then The sideview should be open
+  Then I close the sideview
