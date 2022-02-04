@@ -8,10 +8,12 @@
     "SNAPSHOT_DIFF_DIRECTORY": "./cypress/screenshots/diff"
   },
   "testFiles": "**/*.feature.{js,ts,jsx,tsx}",
+  "$schema": "https://on.cypress.io/cypress.schema.json",
   "trashAssetsBeforeRuns": true,
   "screenshotsFolder": "./cypress/screenshots/actual",
   "viewportWidth": 1280,
   "viewportHeight": 720,
   "video": false,
-  "waitForAnimations": true
+  "waitForAnimations": true,
+  "experimentalStudio": true
 }
