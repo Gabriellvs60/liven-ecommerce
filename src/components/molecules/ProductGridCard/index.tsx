@@ -31,12 +31,12 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
       bgcolor={palette.background.default}
       data-cy="product-grid-card"
     >
-      <TitleContainer id="title-container">
+      <TitleContainer data-cy="title-container">
         <StyledTitle variant="subtitle1" color="text">
           {title}
         </StyledTitle>
 
-        <InfoContainer id="infoBox">
+        <InfoContainer>
           <Typography fontWeight={700} variant="subtitle1" color="primary">
             {formatMessage({ id: "currency" })} {price}
           </Typography>
@@ -45,8 +45,12 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
           </Box>
         </InfoContainer>
 
-        <StyledActions id="actionsBox">
-          <IconButton withBackground onClick={() => onInsert(data)}>
+        <StyledActions data-cy="actions-container">
+          <IconButton
+            withBackground
+            onClick={() => onInsert(data)}
+            dataTestId="button-add"
+          >
             <HiOutlineShoppingBag />
           </IconButton>
         </StyledActions>

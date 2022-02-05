@@ -15,7 +15,7 @@ type IconButtonProps = CustomProps & MuiIconButtonProps;
 
 const IconButton: React.FC<IconButtonProps> = ({
   color = "secondary",
-  dataTestId = 'icon-button',
+  dataTestId = "icon-button",
   badgeCount = null,
   bgColorHover,
   children,
@@ -23,7 +23,7 @@ const IconButton: React.FC<IconButtonProps> = ({
   onClick,
 }: IconButtonProps) => {
   return (
-    <Badge badgeContent={badgeCount} color="primary">
+    <Badge badgeContent={badgeCount} color="primary" data-cy="badge">
       <StyledIconButton
         data-cy={dataTestId}
         $bgColorHover={bgColorHover}

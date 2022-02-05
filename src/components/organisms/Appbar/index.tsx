@@ -32,7 +32,11 @@ const AppBar: React.FC<AppBarProps> = ({ onClickBadge }) => {
           </Box>
           <Box id="appbar-actions">
             {onClickBadge && (
-              <IconButton badgeCount={cartLength} onClick={onClickBadge}>
+              <IconButton
+                badgeCount={cartLength}
+                onClick={onClickBadge}
+                dataTestId="badge-button-open-drawer"
+              >
                 <HiOutlineShoppingBag fontSize="20px" />
               </IconButton>
             )}
