@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import ProductListItem from "./index";
+import ProductListItemProps from "./index";
 
 export default {
   title: "molecules/ProductListItem",
@@ -15,9 +16,9 @@ export default {
     onDecrementProduct: () => {},
     onIncrementProduct: () => {},
   },
-} as ComponentMeta<typeof ProductListItem>;
+} as ComponentMeta<typeof ProductListItemProps>;
 
-export const Default: ComponentStory<typeof ProductListItem> = (args: any) => (
+export const Default: ComponentStory<typeof ProductListItemProps> = (args) => (
   <Box width="300px" height="250px">
     <ProductListItem {...args} />
   </Box>
