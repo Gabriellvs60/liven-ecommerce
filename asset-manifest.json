@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/liven-ecommerce/static/css/main.43c86f1c.css",
+    "main.js": "/liven-ecommerce/static/js/main.7168626c.js",
+    "static/media/hero.jpg": "/liven-ecommerce/static/media/hero.4e078a9f4cbea235672a.jpg",
+    "static/media/logo.jpg": "/liven-ecommerce/static/media/logo.7447379a026a7eb483c7.jpg",
+    "index.html": "/liven-ecommerce/index.html",
+    "main.43c86f1c.css.map": "/liven-ecommerce/static/css/main.43c86f1c.css.map",
+    "main.7168626c.js.map": "/liven-ecommerce/static/js/main.7168626c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.43c86f1c.css",
+    "static/js/main.7168626c.js"
+  ]
+}
