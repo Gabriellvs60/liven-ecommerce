@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Breadcrumbs from "./index";
+import BreadcrumbsProps from "./index";
 
 export default {
   title: "molecules/Breadcrumbs",
@@ -23,7 +24,7 @@ export default {
   },
 } as ComponentMeta<typeof Breadcrumbs>;
 
-export const Default: ComponentStory<typeof Breadcrumbs> = (args: any) => (
+export const Default: ComponentStory<typeof BreadcrumbsProps> = (args) => (
   <Box bgcolor="#2b2b2b">
     <Breadcrumbs {...args} />
   </Box>

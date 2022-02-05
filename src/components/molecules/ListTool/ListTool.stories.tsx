@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import ListTool from "./index";
+import ListToolProps from "./index";
 
 export default {
   title: "molecules/ListTool",
@@ -7,8 +8,8 @@ export default {
   args: {
     hasListView: false,
   },
-} as ComponentMeta<typeof ListTool>;
+} as ComponentMeta<typeof ListToolProps>;
 
-export const Default: ComponentStory<typeof ListTool> = (args: any) => (
+export const Default: ComponentStory<typeof ListToolProps> = (args) => (
   <ListTool {...args} />
 );

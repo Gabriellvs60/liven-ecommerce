@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import ProductGridCard from "./index";
+import ProductGridCardProps from "./index";
 
 export default {
   title: "molecules/ProductGridCard",
@@ -14,9 +15,9 @@ export default {
     },
     onInsert: () => {},
   },
-} as ComponentMeta<typeof ProductGridCard>;
+} as ComponentMeta<typeof ProductGridCardProps>;
 
-export const Default: ComponentStory<typeof ProductGridCard> = (args: any) => (
+export const Default: ComponentStory<typeof ProductGridCardProps> = (args) => (
   <Box width="300px" height="250px">
     <ProductGridCard {...args} />
   </Box>
