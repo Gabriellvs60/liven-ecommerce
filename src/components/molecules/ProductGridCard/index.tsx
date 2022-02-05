@@ -45,7 +45,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
           </Box>
         </InfoContainer>
 
-        <StyledActions data-cy="actions-container">
+        <StyledActions id="actionsBox" data-cy="actions-container">
           <IconButton
             withBackground
             onClick={() => onInsert(data)}
