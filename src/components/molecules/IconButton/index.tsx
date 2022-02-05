@@ -4,6 +4,7 @@ import React from "react";
 import { StyledIconButton } from "./styles";
 
 type CustomProps = {
+  dataTestId?: string;
   badgeCount?: number | null;
   bgColorHover?: string;
   children?: React.ReactNode;
@@ -14,6 +15,7 @@ type IconButtonProps = CustomProps & MuiIconButtonProps;
 
 const IconButton: React.FC<IconButtonProps> = ({
   color = "secondary",
+  dataTestId = 'icon-button',
   badgeCount = null,
   bgColorHover,
   children,
@@ -23,10 +25,10 @@ const IconButton: React.FC<IconButtonProps> = ({
   return (
     <Badge badgeContent={badgeCount} color="primary">
       <StyledIconButton
+        data-cy={dataTestId}
         $bgColorHover={bgColorHover}
         onClick={onClick}
         color={color}
-        aria-label="icon-button"
         $withBackground={withBackground}
       >
         {children}

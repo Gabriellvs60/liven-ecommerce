@@ -62,7 +62,7 @@ const ProductDrawer: React.FC<ProductDrawerProps> = ({
           {formatMessage({ id: "shoppingCart" })}
         </Typography>
         <IconButton
-          data-cy="close-drawer-btn"
+          dataTestId="button-close-drawer"
           sx={{ p: "10px" }}
           aria-label="close-drawer-btn"
           onClick={handleDrawerClose}

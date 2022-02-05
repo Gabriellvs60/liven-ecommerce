@@ -18,3 +18,11 @@ export const StyledFab = styled(Fab)`
     background-color: ${({ theme }) => theme.palette.primary.dark};
   }
 `;
+
+export const ChildrenContainer = styled(Box)`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: ${({ theme }) => theme.spacing(3)};
+`

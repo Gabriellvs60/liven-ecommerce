@@ -1,8 +1,7 @@
-import Box from "@mui/material/Box";
 import React, { PropsWithChildren } from "react";
 import AppBar from "../../organisms/Appbar";
 import Hero from "../../molecules/Hero";
-import { StyledContainer, StyledFab } from "./styles";
+import { ChildrenContainer, StyledContainer, StyledFab } from "./styles";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 
 type MainTemplateProps = PropsWithChildren<{
@@ -16,25 +15,21 @@ const MainTemplate: React.FC<MainTemplateProps> = ({
   onClickFab,
 }) => {
   return (
-    <StyledContainer sx={{ flexGrow: 1 }}>
+    <StyledContainer>
       <AppBar onClickBadge={onClickBadge} />
       <Hero />
-      <Box
-        id="main"
-        component="main"
-        display="flex"
-        alignItems="center"
-        flexDirection="column"
-        width="100%"
-        pb={3}
-      >
+      <ChildrenContainer id="main" component="main">
         {children}
         {onClickFab && (
-          <StyledFab color="secondary" onClick={onClickFab}>
+          <StyledFab
+            color="secondary"
+            onClick={onClickFab}
+            data-cy="fab-open-drawer-cart"
+          >
             <HiOutlineShoppingBag fontSize="20px" />
           </StyledFab>
         )}
-      </Box>
+      </ChildrenContainer>
     </StyledContainer>
   );
 };
