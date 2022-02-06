@@ -99,7 +99,7 @@ const ProductsPage: React.FC = () => {
     toast.warn(formatMessage({ id: "productRemovedMessage" }));
   };
 
-  const saveCartList = (productsList: any) => {
+  const saveCartList = (productsList: ProductProps[]) => {
     cartProducts.dispatch({
       type: "SET_CART",
       payload: { cart: productsList },
