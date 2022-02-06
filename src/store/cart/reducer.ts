@@ -1,5 +1,7 @@
+import { ProductProps } from '../../pages/products/productsPage'
+
 export type StateProps = {
-    cart: any[]
+    cart: ProductProps[]
   }
   
   export type Action =
